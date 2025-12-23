@@ -1,0 +1,22 @@
+{
+  "name": "bnibina-coming-soon",
+  "version": "1.0.0",
+  "description": "Page Coming Soon premium pour entreprise de finitions bâtiment et matériaux",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'Build complete - static site ready'"
+  },
+  "keywords": [
+    "coming-soon",
+    "construction",
+    "building",
+    "premium",
+    "landing-page"
+  ],
+  "author": "BniBina",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
+
