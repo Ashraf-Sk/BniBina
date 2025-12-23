@@ -282,29 +282,218 @@ footer .logo-text:hover .logo-bina {
     z-index: 1;
 }
 
-.image-wrapper {
+/* Brand Showcase - Professional Design */
+.brand-showcase {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 20px 60px rgba(255, 107, 53, 0.3),
-        0 0 0 1px rgba(255, 107, 53, 0.2);
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: transform var(--transition-slow);
-}
-
-.image-wrapper:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.02);
-}
-
-.hero-image {
     width: 100%;
-    height: 500px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
-    background-image: url('data:image/svg+xml,%3Csvg width="600" height="400" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23FF6B35;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%23FFB84D;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="600" height="400" fill="url(%23grad)"/%3E%3Cpath d="M100 200 L300 100 L500 200 L500 300 L300 400 L100 300 Z" fill="rgba(255,255,255,0.1)"/%3E%3C/svg%3E');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    border: 2px solid rgba(255, 107, 53, 0.15);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    text-align: center;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 107, 53, 0.1);
+    transition: all var(--transition-slow);
+    overflow: hidden;
+}
+
+.brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+    opacity: 0.8;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 30px 80px rgba(255, 107, 53, 0.15),
+        0 0 0 1px rgba(255, 107, 53, 0.2);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Logo Container */
+.brand-logo-container {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.brand-logo-img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(255, 107, 53, 0.2));
+    transition: all var(--transition-normal);
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.brand-card:hover .brand-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.3));
+}
+
+/* Brand Name */
+.brand-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-poppins);
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.brand-bni {
+    color: var(--primary-orange);
+    transition: all var(--transition-fast);
+    text-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
+
+.brand-bina {
+    color: var(--secondary-orange);
+    transition: all var(--transition-fast);
+    text-shadow: 0 2px 8px rgba(255, 184, 77, 0.2);
+}
+
+.brand-card:hover .brand-bni {
+    transform: translateX(-3px);
+    text-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.brand-card:hover .brand-bina {
+    transform: translateX(3px);
+    text-shadow: 0 4px 12px rgba(255, 184, 77, 0.4);
+}
+
+/* Tagline */
+.brand-tagline {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 500;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+    font-family: var(--font-inter);
+}
+
+/* Decorative Elements */
+.brand-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.decoration-line {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+    opacity: 0.6;
+}
+
+.decoration-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Accent Shapes */
+.brand-accent-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape-top {
+    width: 150px;
+    height: 150px;
+    background: var(--primary-orange);
+    top: -75px;
+    right: -75px;
+    animation: shapeFloat 6s ease-in-out infinite;
+}
+
+.shape-bottom {
+    width: 120px;
+    height: 120px;
+    background: var(--secondary-orange);
+    bottom: -60px;
+    left: -60px;
+    animation: shapeFloat 8s ease-in-out infinite reverse;
+}
+
+@keyframes shapeFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(10px, -10px) scale(1.1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .brand-card {
+        padding: 3rem 2rem;
+    }
+    
+    .brand-logo-img {
+        height: 100px;
+    }
+    
+    .brand-name {
+        font-size: 36px;
+    }
+    
+    .brand-tagline {
+        font-size: 14px;
+    }
 }
 
 /* Hero Content */
