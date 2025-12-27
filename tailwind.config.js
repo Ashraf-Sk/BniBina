@@ -10,7 +10,7 @@ module.exports = {
         'primary-orange': '#FF6B35',
         'secondary-orange': '#FFB84D',
         'primary-dark': '#E55A2B',
-        'dark': '#2D2D2D',
+        'dark': '#58595B',
         'dark-light': '#4A4A4A',
         'light': '#F5F5F5',
         'light-dark': '#E0E0E0',
